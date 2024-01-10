@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Jugni Swap</title>
+  <script src="https://cdn.jsdelivr.net/npm/@poodl/widget@latest/bundles/poodl-app.min.js"></script>
+  <style>
+    html,
+    body {
+      background: #7F51E8;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    }
+
+    .container {
+      max-height: 1000px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    #poodl-root {
+      display: flex;
+      justify-content: center;
+      min-height: 420px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      InitPoodlApp("poodl-root", {
+        chainId: 137,
+        primaryColor: "#7F51E8",
+        secondaryColor: "#000000",
+        primaryTextColor: "#000000",
+        secondaryTextColor: "#000000",
+        cardBackgroundColor: "#FFFFFF",
+        fontFamily: "Helvetica",
+        borderRadius: "5",
+        borderColor: "#FFFFFF",
+        defaultSlippage: 0.1,
+        defaultSelectedTokenByChains: {
+          137: {
+            defaultOutputToken: "0xe313bcb77dba15f39ff0b9ceabe140cedd0953cb",
+          },
+        },
+        defaultPinnedTokens: {
+          137: [
+            "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+            "0xe313bcb77dba15f39ff0b9ceabe140cedd0953cb",
+          ],
+        },
+        affiliateFee: 0.1,
+        affiliateFeeRecipient: "0xe1964f6d6D17981f533E3eA8Aa19301526882273",
+        overrides: {
+          SwapCardTitle: PoodlReact.createElement(
+            'div',
+            { style: { display: 'flex', alignItems: 'center' } },
+            PoodlReact.createElement('img', {
+              src: 'https://img1.wsimg.com/isteam/ip/83a79df0-d9d0-407c-8f70-72b007986b7c/Untitled-6%20(17).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1209,h:1209,cg:true',
+              style: { width: 40, height: 40 },
+            }),
+            PoodlReact.createElement('p', { style: { margin: 0, marginLeft: 5, fontSize: '28px' } }, 'Swap'),
+          ),
+          SwapCard: {
+            sx: {
+              backgroundColor: "#FFFFFF",
+              backdropFilter: "blur(24px)",
+              borderColor: "#FFFFFF",
+              border: 1
+            },
+          },
+        },
+      });
+    };
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="poodl-root"></div>
+  </div>
+</body>
+
+</html>

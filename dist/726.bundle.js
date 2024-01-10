@@ -1,0 +1,1 @@
+(self.webpackChunkjugni_swapv2=self.webpackChunkjugni_swapv2||[]).push([[726],{52361:()=>{},94616:()=>{}}]);
